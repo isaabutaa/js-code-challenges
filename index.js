@@ -4,7 +4,7 @@
 /* function firstNotRepeatingChar(str) {
     for(let i = 0; i < str.length; i++) {
         let target = str.charAt(i)
-        if(str.indexOf(target, str.indexOf(target) + 1) == -1) {
+        if(str.indexOf(target, i + 1) == -1) {
             return target
         }
     }
@@ -15,15 +15,33 @@
 // References: https://dev.to/seanwelshbrown/find-the-first-duplicate-in-a-javascript-array-5da3
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
 
-/* function firstDuplicate(a) {
-    const numSet = new Set()
-    for(let i = 0; i < a.length; i++) {
-        let num = a[i]
-        if(numSet.has(num)) return num
-        numSet.add(num)
-    }
-    return -1
-} */
+// My solution:
+// const a = [1, 3, 5, 5, 3]
+
+// function firstDupe(a) {
+//     for(let i = 0; i < a.length; i++) {
+//         let num = a[i]
+//         if(a.indexOf(num, i + 1) !== -1) {
+//             return num
+//         }
+//     }
+//     return -1
+// }
+// console.log(firstDupe(a))
+
+// function firstDuplicate(a) {
+//     const numSet = new Set()
+//     for(let i = 0; i < a.length; i++) {
+//         let num = a[i]
+//         if(numSet.has(num)) {
+//             return num
+//         }
+//         numSet.add(num)
+//         // console.log(numSet)
+//     }
+//     return -1
+// }
+// console.log(firstDuplicate(a))
 
 // ***** Challenge: Create a Book class that takes a title, author, ISBN, and numCopies as arguments. Create a getAvailability, sell, and restock method.
 
