@@ -157,3 +157,38 @@ const displayItems = (arr) => {
 }
 
 displayItems(vegetarianDishes) */
+
+// ***** Challenge: Rotate a matrix 90 degrees clockwise
+/*
+Input:
+[
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+Output: 
+[
+    [7, 4, 1],
+    [8, 5, 2],
+    [9, 6, 3]
+]
+*/
+
+const a = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+function rotateImage(a) {
+    const newArr = []
+    for(let i = 0; i < a.length; i++) {
+        let subArr = []
+        for(let j = 0; j < a.length; j++) {
+            subArr.unshift(a[j][i])
+        }
+        newArr.push(subArr)
+    }
+    return newArr
+}
