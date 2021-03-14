@@ -175,20 +175,53 @@ Output:
 ]
 */
 
-const a = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
+// const a = [
+//     [1, 2, 3],
+//     [4, 5, 6],
+//     [7, 8, 9]
+// ]
 
-function rotateImage(a) {
-    const newArr = []
-    for(let i = 0; i < a.length; i++) {
-        let subArr = []
-        for(let j = 0; j < a.length; j++) {
-            subArr.unshift(a[j][i])
-        }
-        newArr.push(subArr)
-    }
-    return newArr
+// function rotateImage(a) {
+//     const newArr = []
+//     for(let i = 0; i < a.length; i++) {
+//         let subArr = []
+//         for(let j = 0; j < a.length; j++) {
+//             subArr.unshift(a[j][i])
+//         }
+//         newArr.push(subArr)
+//     }
+//     return newArr
+// }
+
+// random number between 1 and 3
+
+// function randomNum() {
+//     return Math.floor(Math.random() * 3) + 1
+// }
+
+// console.log(randomNum())
+
+// let username = Symbol("username");
+// let password = Symbol("password");
+
+// const sam = {
+//     [username]: "sam",
+//     [password]: 203948403958,
+//     age: 24
+// };
+
+// console.log(sam.username);
+
+const timeDisplay = document.querySelector("p")
+const button = document.querySelector("button")
+
+const intervalId = setInterval(() => {
+    const date = new Date()
+    return timeDisplay.textContent =  `Current time: ${date.toLocaleTimeString('en-US')}`
+}, 1000)
+
+const stopTime = () => {
+    clearInterval(intervalId)
 }
+
+button.addEventListener("click", () => stopTime())
