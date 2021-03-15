@@ -245,3 +245,47 @@ function adjacentElementsProduct(inputArray) {
 }
 
 console.log(adjacentElementsProduct(inputArray)); // returns 21, which is the product of 7 and 3
+
+// ***** Challenge: Given an object 'classroom', return the list of students within. The 'classroom' object has two properties: hasTeachingAssistant, and classList. If hasTeachingAssistant is true, the second name in the classList will be the teaching assistant. The first person in the class list will always be the teacher. Return the list of students.
+
+// const classroom = {
+//     hasTeachingAssistant: true,
+//     classList: [
+//         "teacher", "teaching assistant", "student1", "student2", "student3"
+//     ]
+// };
+
+// function getStudents(classroom) {
+//     const { hasTeachingAssistant, classList } = classroom;
+//     let teacher, teachingAssistant, students;
+
+//     if(hasTeachingAssistant) {
+//         [teacher, teachingAssistant, ...students] = classList;
+//     } else {
+//         [teacher, ...students] = classList;
+//     }
+//     return students;
+// }
+
+// console.log(getStudents(classroom));
+
+// ***** Challenge: Use a closure to create three buttons that, when clicked, change the background color of the body
+
+// const colors = ["blue", "pink", "green"];
+
+// function coloredButtons(colors) {
+//     for(let i = 0; i < colors.length; i++) {
+//         let color = colors[i];
+//         const button = document.createElement("button");
+//         button.textContent = color;
+//         document.body.append(button);
+
+//         function changeColor(color) {
+//             document.body.style.backgroundColor = color;
+//         }
+
+//         button.addEventListener("click", () => changeColor(color));
+//     }
+// }
+
+// coloredButtons(colors)
