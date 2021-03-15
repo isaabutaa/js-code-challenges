@@ -212,16 +212,36 @@ Output:
 
 // console.log(sam.username);
 
-const timeDisplay = document.querySelector("p")
-const button = document.querySelector("button")
+// ***** Challenge: Use setInterval to display current time on the DOM
 
-const intervalId = setInterval(() => {
-    const date = new Date()
-    return timeDisplay.textContent =  `Current time: ${date.toLocaleTimeString('en-US')}`
-}, 1000)
+// const timeDisplay = document.querySelector("p")
+// const button = document.querySelector("button")
 
-const stopTime = () => {
-    clearInterval(intervalId)
+// const intervalId = setInterval(() => {
+//     const date = new Date()
+//     return timeDisplay.textContent =  `Current time: ${date.toLocaleTimeString('en-US')}`
+// }, 1000)
+
+// const stopTime = () => {
+//     clearInterval(intervalId)
+// }
+
+// button.addEventListener("click", () => stopTime())
+
+
+// ***** Challenge: Given an array of integers, find the pair of adjacent elements that has the largest product and return that product.
+
+const inputArray = [3, 6, -2, -5, 7, 3];
+
+function adjacentElementsProduct(inputArray) {
+    let products = [];
+    for(let i = 0; i < inputArray.length; i++) {
+        if(i !== inputArray.length - 1) {
+            products.push(inputArray[i] * inputArray[i + 1]);   
+        }
+    }
+    const sortedArr = products.sort((a, b) => a - b);
+    return sortedArr[sortedArr.length - 1];
 }
 
-button.addEventListener("click", () => stopTime())
+console.log(adjacentElementsProduct(inputArray)); // returns 21, which is the product of 7 and 3
