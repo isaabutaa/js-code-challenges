@@ -231,20 +231,20 @@ Output:
 
 // ***** Challenge: Given an array of integers, find the pair of adjacent elements that has the largest product and return that product.
 
-const inputArray = [3, 6, -2, -5, 7, 3];
+// const inputArray = [3, 6, -2, -5, 7, 3];
 
-function adjacentElementsProduct(inputArray) {
-    let products = [];
-    for(let i = 0; i < inputArray.length; i++) {
-        if(i !== inputArray.length - 1) {
-            products.push(inputArray[i] * inputArray[i + 1]);   
-        }
-    }
-    const sortedArr = products.sort((a, b) => a - b);
-    return sortedArr[sortedArr.length - 1];
-}
+// function adjacentElementsProduct(inputArray) {
+//     let products = [];
+//     for(let i = 0; i < inputArray.length; i++) {
+//         if(i !== inputArray.length - 1) {
+//             products.push(inputArray[i] * inputArray[i + 1]);   
+//         }
+//     }
+//     const sortedArr = products.sort((a, b) => a - b);
+//     return sortedArr[sortedArr.length - 1];
+// }
 
-console.log(adjacentElementsProduct(inputArray)); // returns 21, which is the product of 7 and 3
+// console.log(adjacentElementsProduct(inputArray)); // returns 21, which is the product of 7 and 3
 
 // ***** Challenge: Given an object 'classroom', return the list of students within. The 'classroom' object has two properties: hasTeachingAssistant, and classList. If hasTeachingAssistant is true, the second name in the classList will be the teaching assistant. The first person in the class list will always be the teacher. Return the list of students.
 
@@ -289,3 +289,66 @@ console.log(adjacentElementsProduct(inputArray)); // returns 21, which is the pr
 // }
 
 // coloredButtons(colors)
+
+// ***** Challenge: using arr.reduce(), calculate the total price of coffees when given an array where arr[i] equals the number of coffees and each coffee costs $1.25
+
+// const soldCoffees = [2, 5, 7, 1, 4];
+
+// function totalProfit(arr) {
+//     let total = arr.reduce((acc, coffees) => {
+//         let price = 1.25
+//         acc += coffees * price
+//         return acc
+//     }, 0)
+//     return `The total is $${total}`
+// }
+
+// console.log(totalProfit(soldCoffees))
+
+// ***** Challenge: Given a few arrays that represent food truck menus, create a master menu that does not have any duplicate items. Use JS Sets to solve the problem
+
+/* const menu1 = ['pizza', 'pasta'];
+const menu2 = ['pizza', 'calzones'];
+const menu3 = ['lobster'];
+const menu4 = ['calzones', 'philly cheese steak'];
+const combinedMenu = [...menu1, ...menu2, ...menu3, ...menu4];
+const domMenu = document.getElementById('combined-menu');
+let finalMenu = [];
+
+const createMasterMenu = a => {
+    const masterMenu = new Set();
+    for(const item of a) masterMenu.add(item);
+    finalMenu = [...masterMenu];
+    listMenuItems(finalMenu);
+}
+
+const listMenuItems = a => a.map(item => {
+    const listItem = document.createElement('li');
+    listItem.textContent = item;
+    domMenu.appendChild(listItem);
+})
+
+createMasterMenu(combinedMenu); */
+
+// ***** Challenge: Using a generator function, when a button is clicked, console log each stop in the train path. When you reach the last stop, disable the button and console.log "you've arrived!"
+
+const trainBtn = document.querySelector('#train-btn');
+const getStops = trainStops();
+trainBtn.addEventListener('click', () => {
+    let currStop = getStops.next();
+    if(currStop.done) {
+        console.log(`${currStop.value} - You made it!`);
+        trainBtn.setAttribute('disabled', true);
+    } else {
+        console.log(currStop.value);
+    }
+});
+
+function* trainStops() {
+    yield 'Poughkeepsie';
+    yield 'Newsburgh';
+    yield 'Peekskill';
+    yield 'Yonkers';
+    yield 'Bronx';
+    return 'Grand Central';
+}
